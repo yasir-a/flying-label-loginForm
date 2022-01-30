@@ -1,3 +1,4 @@
 #Floating Label LoginForm
 
-Login form with floating label
+- Login form with floating label
+- Reusable Input Component
