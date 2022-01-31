@@ -1,17 +1,17 @@
 .input-group {
-  position: relative;
-  margin-top: 21px;
+  margin-top: 20px;
   padding: 0px 30px;
+  position: relative;
 }
 
 input {
   font-size: 15px;
-  padding: 10px 0px;
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #757575;
   background: transparent;
+  border-bottom: 1px solid #757575;
+  padding: 10px 0;
 }
 
 input:focus {
@@ -30,7 +30,6 @@ label {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
 input:focus ~ label,
 input:valid ~ label {
   top: -8px;
@@ -41,7 +40,7 @@ input:valid ~ label {
 .bar {
   position: relative;
   display: block;
-  padding: 0px 30px;
+  padding: 0 30px;
 }
 
 .bar:before,
@@ -60,11 +59,9 @@ input:valid ~ label {
 .bar:before {
   left: 50%;
 }
-
 .bar:after {
   right: 50%;
 }
-
 input:focus ~ .bar:before,
 input:focus ~ .bar:after {
   width: 50%;
@@ -81,13 +78,12 @@ input:focus ~ .bar:after {
 }
 
 input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
+  animation: inputHighlight 0.3s ease;
+  -webkit-animation: inputHighlight 0.3s ease;
+  -moz-animation: inputHighlight 0.3s ease;
 }
 
-/* animations */
-@-webkit-keyframes inputHighlighter {
+@-webkit-keyframes inputHighlight {
   from {
     background: #5468ff;
   }
@@ -96,7 +92,7 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-@-moz-keyframes inputHighlighter {
+@-moz-keyframes inputHighlight {
   from {
     background: #5468ff;
   }
@@ -105,7 +101,7 @@ input:focus ~ .highlight {
     background: transparent;
   }
 }
-@keyframes inputHighlighter {
+@keyframes inputHighlight {
   from {
     background: #5468ff;
   }

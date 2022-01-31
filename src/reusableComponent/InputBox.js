@@ -1,8 +1,10 @@
+import React from "react";
 import "./InputBox.css";
-const InputBox = ({ onChange, value, name, type, label }) => {
+const InputBox = ({ id, name, value, type, label, onChange }) => {
   return (
     <div className="input-group">
       <input
+        id={id}
         type={type}
         name={name}
         value={value}
@@ -11,7 +13,7 @@ const InputBox = ({ onChange, value, name, type, label }) => {
       />
       <span className="highlight"></span>
       <span className="bar"></span>
-      <label>{label}</label>
+      <label htmlFor={id}>{label}</label>
     </div>
   );
 };

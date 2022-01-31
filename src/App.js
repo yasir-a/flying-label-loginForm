@@ -1,42 +1,43 @@
 import { useState } from "react";
-import InputBox from "./components/InputBox";
+import InputBox from "./reusableComponent/InputBox";
 import Login from "./assets/unDraw/loginSVG.svg";
 import "./App.css";
-
-function App() {
+const App = () => {
   const [input, setInput] = useState({ username: "", password: "" });
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-    console.log(value);
     setInput({ ...input, [name]: value });
   };
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    console.log(input);
   };
+
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleOnSubmit}>
-        <img src={Login} className="login-img" alt="loginForm" />
+        <img className="login-img" src={Login} alt="login" />
         <InputBox
+          id="username"
           type="text"
           name="username"
           value={input.username}
-          onChange={handleOnChange}
           label="Username"
+          onChange={handleOnChange}
         />
         <InputBox
+          id="password"
           type="password"
           name="password"
           value={input.password}
-          onChange={handleOnChange}
           label="Password"
+          onChange={handleOnChange}
         />
         <button type="submit">Login</button>
       </form>
     </div>
   );
-}
+};
 
 export default App;
